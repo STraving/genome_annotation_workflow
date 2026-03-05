@@ -7,9 +7,13 @@ The workflow currently includes:
 4. Gene annotation
 
 Specific for Ucloud:
+
 -Spades and potentially GTDB-Tk will require some amount of RAM, run it on a job with 32-64 GB RAM.
+
 -We save raw data in its own separate directory. Please keep your intermediate files on your own work directory.
+
 -Due to multiple people working in the same workspace on Ucloud many of the tools are installed separately. Just activate the right conda environment for the tool you need.
+
 1. Quality check
    
 `fastp -i forward_reads.fastq.gz -I reverse_reads.fastq.gz -o output_forward.fq -O output_reverse.fq`
