@@ -15,6 +15,8 @@ Specific for Ucloud:
 -Due to multiple people working in the same workspace on Ucloud many of the tools are installed separately. Just activate the right conda environment for the tool you need.
 
 1. Quality check
+
+   `conda activate fastq`
    
 `fastp -i forward_reads.fastq.gz -I reverse_reads.fastq.gz -o output_forward.fq -O output_reverse.fq`
 
