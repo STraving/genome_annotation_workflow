@@ -17,8 +17,8 @@ Specific for Ucloud:
 1. Quality check
 
    `conda activate fastq`
-   
-`fastp -i forward_reads.fastq.gz -I reverse_reads.fastq.gz -o output_forward.fq -O output_reverse.fq`
+
+   `fastp -i forward_reads.fastq.gz -I reverse_reads.fastq.gz -o output_forward.fq -O output_reverse.fq`
 
 check the stats after the run, example:
 
