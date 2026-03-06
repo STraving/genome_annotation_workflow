@@ -68,7 +68,7 @@ check the stats after the run.
 
     Example for a single genome, therefore the --skip_ani_screen option:
    
-         gtdbtk classify_wf --genome_dir genomes/ --out_dir GTDB-Tk --cpus 4 --skip_ani_screen --extension fasta
+            gtdbtk classify_wf --genome_dir genomes/ --out_dir GTDB-Tk --cpus 2 --skip_ani_screen --extension fasta --scratch_dir gtdbtk_scratch
 
 5. Gene annotation using Prokka
     To learn more about Prokka see https://github.com/tseemann/prokka
