@@ -1,6 +1,8 @@
 # genome_annotation_workflow
 Guideline for genome assembly of bacteria isolated from environmental material. We assume no taxonomy before starting.
+
 The workflow currently includes:
+
 1. Quality check and trimming
 2. Assembly
 3. Taxonomy
@@ -14,7 +16,7 @@ Specific for Ucloud:
 
 - In the HADAL center we save raw data in its own separate directory. Please keep your intermediate files in your own work directory.
 
--Due to multiple people working in the same workspace on Ucloud many of the tools are installed separately. Just activate the right conda environment for the tool you need.
+- Due to multiple people working in the same workspace on Ucloud many of the tools are installed separately. Just activate the right conda environment for the tool you need.
 
 Conda environments:
 
@@ -40,12 +42,12 @@ check the stats after the run, example:
 
 
    `conda deactivate`
-
+   
 2. Genome assembly using Spades
 
- To learn more about Spades see https://ablab.github.io/spades/
+    To learn more about Spades see https://ablab.github.io/spades/
    
-   We run the assembly with the --isolate function.
+    We run the assembly with the --isolate function.
 
    `conda activate spades`
    
@@ -53,17 +55,26 @@ check the stats after the run, example:
 
    `conda deactivate`
 
-   Here the example is shown running on a job with 24GB RAM and 4 CPUs, for assembling this environmental isolate with ~50x coverage from sediment, it took around 25 min and worked without issue.
-   
-  2.b   filtering of contigs
-  
-  If your assembly contains alot of smaller contigs ≥ 1000 bp it is probably helpful to filter these out. you can remove them with        seqKit.
-  
-  `seqkit seq -L 1000 contigs.fasta > contigs_1kb.fasta`
+    Here the example is shown running on a job with 24GB RAM and 4 CPUs, for assembling this environmental          isolate with ~50x coverage from sediment, it took around 25 min and worked without issue.
 
-   You can adjust the cutoff size if you need it to be more lenient or strict. 
+3. Filtering of contigs:
+    If your assembly contains alot of smaller contigs ≥ 1000 bp it is probably helpful to filter these out. You     can remove them with seqkt.
   
+  `seqkt seq -L 1000 contigs.fasta > contigs_1kb.fasta`
+
+    You can adjust the cutoff size if you need it to be more lenient or strict. 
+    
+    Filtered contig file is moved to a new folder where all your genomes can be gathered for taxonomy analysis.
+   
 4. Taxonomic assignment using GTDB-Tk
-   To learn more about GTDB-Tk see https://github.com/Ecogenomics/GTDBTk
+    To learn more about GTDB-Tk see https://github.com/Ecogenomics/GTDBTk
+
+    Example for a single genome, therefore the --skip_ani_screen option:
+   
+   `gtdbtk classify_wf --genome_dir genomes/ --out_dir GTDB-Tk --cpus 4 --skip_ani_screen --extension fasta`
+
+5. Gene annotation using Prokka
+    To learn more about Prokka see https://github.com/tseemann/prokka
+    Consider cross checking results with other annotation tools.
 
    
