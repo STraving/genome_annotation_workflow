@@ -53,7 +53,7 @@ check the stats after the run, example:
 
    `conda deactivate`
 
-   Here the example is shown running on a job with 24GB RAM and 4 CPUs, for assembling this environmental isolate with ~50x coverage       from sediment, it worked fine.
+   Here the example is shown running on a job with 24GB RAM and 4 CPUs, for assembling this environmental isolate with ~50x coverage from sediment, it took around 25 min and worked without issue.
    
   2.b   filtering of contigs
   
