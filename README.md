@@ -52,9 +52,10 @@ check the stats after the run.
 
          conda deactivate
 
-    Here the example is shown running on a job with 24GB RAM and 4 CPUs, for assembling this environmental          isolate with ~50x coverage from sediment, it took around 25 min and worked without issue.
+    Here the example is shown running on a job with 24GB RAM and 4 CPUs, for assembling this environmental isolate with ~50x coverage from sediment, it took around 25 min and worked without issue.
 
 3. Filtering of contigs:
+   
     If your assembly contains alot of smaller contigs ≥ 1000 bp it is probably helpful to filter these out. You     can remove them with seqkt.
   
         seqkt seq -L 1000 contigs.fasta > contigs_1kb.fasta
@@ -63,15 +64,18 @@ check the stats after the run.
     
     Filtered contig file is moved to a new folder where all your genomes can be gathered for taxonomy analysis.
    
-4. Taxonomic assignment using GTDB-Tk
+5. Taxonomic assignment using GTDB-Tk
+   
     To learn more about GTDB-Tk see https://github.com/Ecogenomics/GTDBTk
 
     Example for a single genome, therefore the --skip_ani_screen option:
    
             gtdbtk classify_wf --genome_dir genomes/ --out_dir GTDB-Tk --cpus 2 --skip_ani_screen --extension fasta --scratch_dir gtdbtk_scratch
 
-5. Gene annotation using Prokka
+7. Gene annotation using Prokka
+   
     To learn more about Prokka see https://github.com/tseemann/prokka
+   
     Consider cross checking results with other annotation tools.
 
    
