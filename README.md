@@ -78,7 +78,11 @@ Example with multiple genomes classified in batch, don't skip the ani screen, us
 ### 5. Gene annotation using Prokka
    
 To learn more about Prokka see https://github.com/tseemann/prokka
-   
+
+      prokka --outdir prokka_annotations genomes/contigs.fa
+
+Use the filtered contigs.
+
 Consider cross checking results with other annotation tools.
 
    
