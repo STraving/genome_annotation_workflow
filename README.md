@@ -1,4 +1,4 @@
-# genome_annotation_workflow
+# Genome assembly and annotation workflow
 Guideline for genome assembly of bacteria isolated from environmental material. We assume no taxonomy before starting.
 
 The workflow currently includes:
